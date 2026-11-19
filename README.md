@@ -2,6 +2,8 @@
 
 **Zhen Mei and Tao Zhao** · Sichuan University
 
+Published in **IEEE Transactions on Fuzzy Systems** as an **Early Access** article.
+
 DFAN is a PyTorch model for multivariate time series forecasting. It learns temporal dependencies across patches and relationships between variables in parallel, then fuses the two representations to forecast future values.
 
 [Architecture](#architecture) · [Quick start](#quick-start) · [Run the benchmarks](#run-the-benchmarks) · [Results](#results) · [Citation](#citation)
@@ -97,8 +99,10 @@ The tables below show the manuscript's MSE and MAE comparisons across eight benc
 
 ## Citation
 
-If you use DFAN in your research, please cite the manuscript.
+If you use DFAN in your research, please cite the paper.
 
 ## Acknowledgments
 
 The implementation builds on the Time Series Forecasting Benchmark and the Time-Series-Library. [TFB](https://github.com/decisionintelligence/TFB) · [Time-Series-Library](https://github.com/thuml/Time-Series-Library)
+
+We thank the authors for making their code publicly available.
