@@ -91,16 +91,6 @@ The tables below show the manuscript's MSE and MAE comparisons across eight benc
 
 [![Table V. DFAN compared with state-of-the-art and fuzzy-based methods](assets/readme/comparison-recent-and-fuzzy-methods.png)](assets/readme/comparison-recent-and-fuzzy-methods.png)
 
-## Repository layout
-
-| Path | Contents |
-| --- | --- |
-| [`Main_DFAN.py`](Main_DFAN.py) | One-epoch ETTh1 example |
-| [`scripts/run_benchmark.py`](scripts/run_benchmark.py) | Training and rolling evaluation entry point |
-| [`scripts/multivariate_forecast/`](scripts/multivariate_forecast/) | Dataset-specific commands and hyperparameters |
-| [`config/`](config/) | Forecasting and evaluation configuration |
-| [`ts_benchmark/baselines/dfan/`](ts_benchmark/baselines/dfan/) | DFAN model, similarity masks, fuzzy attention, and experts |
-
 ## Citation
 
 If you use DFAN in your research, please cite the paper.
