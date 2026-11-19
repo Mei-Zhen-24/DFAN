@@ -4,9 +4,11 @@
 
 Published in **IEEE Transactions on Fuzzy Systems** as an **Early Access** article.
 
-DFAN is a PyTorch model for multivariate time series forecasting. It learns temporal dependencies across patches and relationships between variables in parallel, then fuses the two representations to forecast future values.
+[Abstract](#abstract) · [Architecture](#architecture) · [Quick start](#quick-start) · [Run the benchmarks](#run-the-benchmarks) · [Results](#results) · [Citation](#citation)
 
-[Architecture](#architecture) · [Quick start](#quick-start) · [Run the benchmarks](#run-the-benchmarks) · [Results](#results) · [Citation](#citation)
+## Abstract
+
+Time series forecasting plays a crucial role in many real-world applications. However, most existing models treat cross-patch temporal relations and cross-channel variable relations separately, while their joint modeling within a unified framework remains insufficiently explored. This separation limits the ability to capture coupled interactions between temporal patterns and variables, leading to suboptimal dependency representation. To address this limitation, we propose a Dual-Path Fuzzy Attention Network (DFAN) for time series forecasting. DFAN incorporates a fuzzy similarity masking strategy that suppresses redundant and noisy components before dependency construction, which encourages relation modeling on refined representations. In addition, a dual-path fuzzy attention module is designed to simultaneously model temporal relations among patches and variable relations among channels, followed by an adaptive fusion mechanism that integrates complementary information from both paths. Furthermore, a hierarchical fuzzy mixture-of-experts framework is employed to promote more adaptive expert specialization through bidirectional interaction between the expert module and the gating process. Experiments on eight real-world datasets across four forecasting horizons show that DFAN achieves average relative reductions of 12.20% in MSE and 10.13% in MAE across comparisons with 24 competing methods.
 
 ## Architecture
 
@@ -34,7 +36,9 @@ DFAN uses `torch.nn.RMSNorm`. You can check that your PyTorch build provides it 
 python -c "import torch; print(torch.__version__); print(torch.nn.RMSNorm); print(torch.cuda.is_available())"
 ```
 
-Run one epoch on the included ETTh1 dataset with a 512-step look-back window and a 96-step forecast horizon.
+Download the preprocessed ETTh1 CSV from TFB and place it at `dataset/forecasting/ETTh1.csv`. ETTh1 comes from the Electricity Transformer Dataset released with Informer. [TFB download](https://github.com/decisionintelligence/TFB#quickstart) · [ETDataset and Informer citation](https://github.com/zhouhaoyi/ETDataset#readme) · [ETDataset license](https://github.com/zhouhaoyi/ETDataset/blob/main/LICENSE)
+
+Run one epoch with a 512-step look-back window and a 96-step forecast horizon.
 
 ```bash
 python Main_DFAN.py
@@ -44,7 +48,7 @@ This entry point runs rolling evaluation after training. For the full training s
 
 ## Run the benchmarks
 
-For benchmarks beyond the included ETTh1, download the preprocessed CSV files and extract them into `dataset/forecasting/`, alongside `FORECAST_META.csv`. [Google Drive](https://drive.google.com/file/d/1vgpOmAygokoUt235piWKUjfwao6KwLv7/view?usp=drive_link) · [Baidu Netdisk](https://pan.baidu.com/s/1ycq7ufOD2eFOjDkjr0BfSg?pwd=bpry)
+Download any additional preprocessed benchmark CSVs from the same TFB release and place them in `dataset/forecasting/`, alongside `FORECAST_META.csv`.
 
 From the repository root, run the script for the dataset you want to evaluate. Use Bash on Linux or macOS, or Git Bash or WSL on Windows.
 
